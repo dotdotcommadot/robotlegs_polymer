@@ -1,0 +1,19 @@
+<polymer-element name="application-shell">
+  <template>
+    <style>
+      div {
+        font-size: 24pt;
+        text-align: center;
+        margin-top: 140px;
+      }
+      button {
+        font-size: 24pt;
+        margin-bottom: 20px;
+      }
+    </style>
+    <div>
+      <button on-click="{{addTodo}}">{{todoItem.value}}</button><br>
+    </div>
+  </template>
+  <script type="application/dart" src="application_shell.dart"></script>
+</polymer-element>

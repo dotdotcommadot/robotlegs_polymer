@@ -1,0 +1,9 @@
+name: robotlegs_polymer
+description: A sample Polymer application
+dependencies:
+  polymer: any
+  robotlegs:
+    path: C:\Users\hvk\DartWorkspace\robotlegs
+transformers:
+- polymer:
+    entry_points: web/robotlegs_polymer.html
