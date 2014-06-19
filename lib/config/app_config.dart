@@ -1,4 +1,10 @@
-part of robotlegs_polymer;
+library app_config;
+
+import 'package:robotlegs/robotlegs.dart';
+import 'package:robotlegs_di/robotlegs_di.dart';
+import 'package:robotlegs_polymer/model/todo_item.dart';
+import 'package:robotlegs_polymer/view/application_shell.dart';
+import 'package:robotlegs_polymer/view/application_shell_mediator.dart';
 
 class AppConfig implements IConfig
 {
@@ -6,12 +12,15 @@ class AppConfig implements IConfig
 	IInjector injector;
 	
 	@inject
-	IViewProcessorMap viewProcessor;
+	IMediatorMap mediatorMap;
 	
 	void configure()
 	{
+		// Map models
 		injector.map(TodoItem);
 		
-		viewProcessor.map(applicationShell.runtimeType).toInjection();
+		// Map mediators
+		mediatorMap.map(ApplicationShell)
+							 .toMediator(ApplicationShellMediator);
 	}
 }

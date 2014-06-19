@@ -1,8 +1,9 @@
 library robotlegs_polymer.application_shell;
 
+import 'package:robotlegs_polymer/model/todo_item.dart';
+import 'package:observe/observe.dart';
 import 'package:polymer/polymer.dart';
-import 'package:robotlegs_di/robotlegs_di.dart';
-import 'package:robotlegs_polymer/robotlegs_polymer.dart';
+import 'dart:async';
 
 @CustomTag('application-shell')
 class ApplicationShell extends PolymerElement
@@ -17,11 +18,14 @@ class ApplicationShell extends PolymerElement
   // TodoItem
   //-----------------------------------
 	
-	TodoItem _todoItem;
+	@observable
+	TodoItem todoItem;
 	
-	@inject
-	set todoItem(TodoItem value) => _todoItem = notifyPropertyChange(const Symbol('todoItem'), _todoItem, value);
-	TodoItem get todoItem 			 => _todoItem;
+  //-----------------------------------
+  // addTodoButtonClickedController
+  //-----------------------------------
+	
+  StreamController addTodoButtonClickedController = new StreamController();
 	
   //-----------------------------------
   //
@@ -36,15 +40,9 @@ class ApplicationShell extends PolymerElement
   // Public Methods
   //
   //-----------------------------------
-	
-  @postConstruct
-  void onRegister()
-  {
-  	print(todoItem.toString());
-  }
   
   void addTodo()
   {
-  	todoItem.value = "nomnomnom";
+  	addTodoButtonClickedController.add('nomnomnom');
   }
 }

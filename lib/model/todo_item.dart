@@ -1,4 +1,8 @@
-part of robotlegs_polymer;
+library robotlegs_polymer.model;
+
+import 'package:robotlegs_di/robotlegs_di.dart';
+import 'package:observe/observe.dart';
+import 'package:polymer/polymer.dart';
 
 class TodoItem
 {
