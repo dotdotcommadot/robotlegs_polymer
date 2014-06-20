@@ -2,9 +2,10 @@ library app_config;
 
 import 'package:robotlegs/robotlegs.dart';
 import 'package:robotlegs_di/robotlegs_di.dart';
-import 'package:robotlegs_polymer/model/todo_item.dart';
+import 'package:robotlegs_polymer/model/todo_list_model.dart';
 import 'package:robotlegs_polymer/view/application_shell.dart';
 import 'package:robotlegs_polymer/view/application_shell_mediator.dart';
+import 'package:robotlegs_polymer/controller/add_todo_item_command.dart';
 
 class AppConfig implements IConfig
 {
@@ -13,14 +14,21 @@ class AppConfig implements IConfig
 	
 	@inject
 	IMediatorMap mediatorMap;
+
+	@inject
+	IMessageCommandMap messageCommandMap;
 	
 	void configure()
 	{
 		// Map models
-		injector.map(TodoItem);
+		injector.map(TodoListModel).asSingleton();
 		
 		// Map mediators
 		mediatorMap.map(ApplicationShell)
 							 .toMediator(ApplicationShellMediator);
+		
+		// Map commands
+		messageCommandMap.map(ADD_TODO_ITEM)
+										 .toCommand(AddTodoItemCommand);
 	}
 }

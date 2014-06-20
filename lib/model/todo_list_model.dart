@@ -1,10 +1,9 @@
-library robotlegs_polymer.model;
+library robotlegs_polymer.model.todo_list_model;
 
-import 'package:robotlegs_di/robotlegs_di.dart';
 import 'package:observe/observe.dart';
-import 'package:polymer/polymer.dart';
+import 'package:robotlegs_polymer/model/vo/todo_item.dart';
 
-class TodoItem
+class TodoListModel
 {
   //-----------------------------------
   //
@@ -12,8 +11,7 @@ class TodoItem
   //
   //-----------------------------------
 	
-	@observable
-	String value = "Eat Cookies";
+	ObservableList<TodoItem> todoItems = new ObservableList();
 	
   //-----------------------------------
   //
@@ -21,7 +19,7 @@ class TodoItem
   //
   //-----------------------------------
 	
-	TodoItem();
+	TodoListModel();
 	
   //-----------------------------------
   //
@@ -29,9 +27,14 @@ class TodoItem
   //
   //-----------------------------------
 	
-	@postConstruct
-	void onRegister()
+	addTodoItem(TodoItem item)
 	{
-		print("Todo Item " + value);
+		todoItems.add(item);
+	}
+
+	deleteTodoItem(TodoItem item)
+	{
+		if (todoItems.contains(item))
+			todoItems.remove(item);
 	}
 }
