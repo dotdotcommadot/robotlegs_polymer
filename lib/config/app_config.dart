@@ -24,11 +24,9 @@ class AppConfig implements IConfig
 		injector.map(TodoListModel).asSingleton();
 		
 		// Map mediators
-		mediatorMap.map(TodoListView)
-							 .toMediator(TodoListMediator);
+		mediatorMap.map(TodoListView).toMediator(TodoListMediator);
 		
 		// Map commands
-		messageCommandMap.map(ADD_TODO_ITEM)
-										 .toCommand(AddTodoItemCommand);
+		messageCommandMap.map(ADD_TODO_ITEM).toCommand(AddTodoItemCommand);
 	}
 }
