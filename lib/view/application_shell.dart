@@ -19,8 +19,8 @@ class ApplicationShell extends PolymerElement
   //-----------------------------------
 	
 	@observable
-	TodoItem todoItem;
-	
+	List<TodoItem> todoItems;
+  
   //-----------------------------------
   // addTodoButtonClickedController
   //-----------------------------------
@@ -43,6 +43,6 @@ class ApplicationShell extends PolymerElement
   
   void addTodo()
   {
-  	addTodoButtonClickedController.add('');
+  	addTodoButtonClickedController.add('hello');
   }
 }

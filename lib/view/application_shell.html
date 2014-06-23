@@ -13,8 +13,14 @@
     </style>
     
     <div>
-      <button on-click="{{addTodo}}">{{todoItem.description}}</button>
+      <button id="add-todo-button" on-click="{{addTodo}}">Add Item</button>
     </div>
+    
+    <table>
+		  <tr template repeat="{{todoItems}}">
+		    <td>{{description}}</td>
+		  </tr>
+		</table>
   </template>
   <script type="application/dart" src="application_shell.dart"></script>
 </polymer-element>

@@ -38,11 +38,11 @@ class ApplicationShellMediator extends Mediator
 	@override
 	void initialize() 
 	{
-		addStreamListener(view.addTodoButtonClickedController.stream, _onClicked_addtodoButton);
+		addStreamListener(view.addTodoButtonClickedController.stream, _onClicked_addTodoButton);
 		addStreamListener(todoListModel.todoItems.changes, _onChanged_todoItems);
 	}
 	
-	void _onClicked_addtodoButton(String description)
+	void _onClicked_addTodoButton(String description)
 	{
 		TodoItem todoItem = new TodoItem();
 		todoItem.description = description;
@@ -52,6 +52,6 @@ class ApplicationShellMediator extends Mediator
 	
 	void _onChanged_todoItems(List<ChangeRecord> changes)
 	{
-		view.todoItem = todoListModel.todoItems.last;
+		view.todoItems = todoListModel.todoItems;
 	}
 }
