@@ -11,7 +11,7 @@ class TodoItem
   //-----------------------------------
 	
 	@observable
-	String description = "Eat Cookies";
+	String description;
 
 	@observable
 	DateTime dueDate;
