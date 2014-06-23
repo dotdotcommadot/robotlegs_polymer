@@ -16,8 +16,16 @@ class TodoListMediator extends Mediator
   //
   //-----------------------------------
 	
+  //-----------------------------------
+  // todoListModel
+  //-----------------------------------
+	
 	@inject
 	TodoListModel todoListModel;
+	
+  //-----------------------------------
+  // view
+  //-----------------------------------
 	
 	TodoListView get view => viewComponent as TodoListView;
 	
@@ -38,8 +46,11 @@ class TodoListMediator extends Mediator
 	@override
 	void initialize() 
 	{
-		addStreamListener(view.addTodoButtonClickedController.stream, _onClicked_addTodoButton);
-		addStreamListener(todoListModel.todoItems.changes, _onChanged_todoItems);
+		// Listen to view
+		view.addTodoButtonClickedController.stream.listen(_onClicked_addTodoButton);
+		
+		// Listen to model
+		todoListModel.todoItems.changes.listen(_onChanged_todoItems);
 	}
 	
 	void _onClicked_addTodoButton(String description)
