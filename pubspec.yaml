@@ -1,5 +1,5 @@
 name: robotlegs_polymer
-version: 0.1.0
+version: 0.1.1
 author: Hans Van den Keybus
 description: Demo of an application combining Polymer and Robotlegs for Google Dart
 dependencies:

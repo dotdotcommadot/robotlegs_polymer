@@ -1,26 +1,15 @@
 <polymer-element name="todo-list-view">
   <template>
-    <style>
-      div {
-        font-size: 24pt;
-        text-align: center;
-        margin-top: 140px;
-      }
-      button {
-        font-size: 24pt;
-        margin-bottom: 20px;
-      }
-    </style>
-    
     <div>
+    	<input id="description-input" type="text"><br>
       <button id="add-todo-button" on-click="{{addTodo}}">Add Todo Item</button>
     </div>
     
-    <table>
-		  <tr template repeat="{{todoItems}}">
-		    <td>{{description}}</td>
-		  </tr>
-		</table>
+    <ul>
+      <template repeat="{{todoItem in todoItems}}">
+        <li>{{todoItem.description}}</li>
+      </template>
+    </ul>
   </template>
   <script type="application/dart" src="todo_list_view.dart"></script>
 </polymer-element>
