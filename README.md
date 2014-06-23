@@ -1,4 +1,4 @@
 robotlegs_polymer
 =================
 
-Demo application fo the Dart Robotlegs project, combined with Polymer
+Demo of an application combining Polymer and Robotlegs for Google Dart
