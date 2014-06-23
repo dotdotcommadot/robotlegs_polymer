@@ -4,11 +4,11 @@ import 'package:robotlegs/robotlegs.dart';
 import 'package:robotlegs_di/robotlegs_di.dart';
 import 'package:robotlegs_polymer/model/vo/todo_item.dart';
 import 'package:robotlegs_polymer/model/todo_list_model.dart';
-import 'package:robotlegs_polymer/view/application_shell.dart';
+import 'package:robotlegs_polymer/view/todo_list_view.dart';
 import 'package:robotlegs_polymer/controller/add_todo_item_command.dart';
 import 'package:observe/src/change_record.dart';
 
-class ApplicationShellMediator extends Mediator
+class TodoListMediator extends Mediator
 {
   //-----------------------------------
   //
@@ -19,7 +19,7 @@ class ApplicationShellMediator extends Mediator
 	@inject
 	TodoListModel todoListModel;
 	
-	ApplicationShell get view => viewComponent as ApplicationShell;
+	TodoListView get view => viewComponent as TodoListView;
 	
   //-----------------------------------
   //
@@ -27,7 +27,7 @@ class ApplicationShellMediator extends Mediator
   //
   //-----------------------------------
   	
-	ApplicationShellMediator();
+	TodoListMediator();
 	
   //-----------------------------------
   //

@@ -12,5 +12,5 @@ void main()
 	context = new Context()
 		.install([MVCSBundle])
 		.configure([AppConfig, 
-		            new ContextView(document.querySelector("#applicationShell"))]);
+		            new ContextView(document.querySelector("#todoListView"))]);
 }

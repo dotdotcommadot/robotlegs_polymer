@@ -5,8 +5,8 @@ import 'package:observe/observe.dart';
 import 'package:polymer/polymer.dart';
 import 'dart:async';
 
-@CustomTag('application-shell')
-class ApplicationShell extends PolymerElement
+@CustomTag('todo-list-view')
+class TodoListView extends PolymerElement
 {
   //-----------------------------------
   //
@@ -33,7 +33,7 @@ class ApplicationShell extends PolymerElement
   //
   //-----------------------------------
 	
-	ApplicationShell.created() : super.created();
+  TodoListView.created() : super.created();
 	
   //-----------------------------------
   //

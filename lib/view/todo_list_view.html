@@ -1,4 +1,4 @@
-<polymer-element name="application-shell">
+<polymer-element name="todo-list-view">
   <template>
     <style>
       div {
@@ -13,7 +13,7 @@
     </style>
     
     <div>
-      <button id="add-todo-button" on-click="{{addTodo}}">Add Item</button>
+      <button id="add-todo-button" on-click="{{addTodo}}">Add Todo Item</button>
     </div>
     
     <table>
@@ -22,5 +22,5 @@
 		  </tr>
 		</table>
   </template>
-  <script type="application/dart" src="application_shell.dart"></script>
+  <script type="application/dart" src="todo_list_view.dart"></script>
 </polymer-element>
