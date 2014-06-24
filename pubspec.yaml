@@ -3,9 +3,11 @@ version: 0.1.2
 author: Hans Van den Keybus
 description: Demo of an application combining Polymer and Robotlegs for Google Dart
 dependencies:
-  polymer: any
+  polymer: 0.11.0-dev.8
   robotlegs:
     path: C:\Users\hvk\DartWorkspace\robotlegs
 transformers:
 - polymer:
     entry_points: web/robotlegs_polymer.html
+- $dart2js:
+    minify: true
