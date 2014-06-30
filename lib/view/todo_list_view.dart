@@ -23,10 +23,11 @@ class TodoListView extends PolymerElement
 	List<TodoItem> todoItems;
   
   //-----------------------------------
-  // addTodoButtonClickedController
+  // addTodoItemRequestController
   //-----------------------------------
 	
-  StreamController addTodoButtonClickedController = new StreamController.broadcast();
+  StreamController addTodoItemRequestController = new StreamController.broadcast();
+  StreamController removeTodoItemRequestController = new StreamController.broadcast();
 	
   //-----------------------------------
   //
@@ -42,9 +43,15 @@ class TodoListView extends PolymerElement
   //
   //-----------------------------------
   
-  void addTodo()
+  void addItem()
   {
   	dom.InputElement descriptionInput = shadowRoot.querySelector('#description-input');
-  	addTodoButtonClickedController.add(descriptionInput.value);
+  	addTodoItemRequestController.add(descriptionInput.value);
+  }
+  
+  void removeItem(dom.Event event, dynamic detail, dom.Element target)
+  {
+  	int todoItem = int.parse(target.attributes['todo-item-id']);
+  	removeTodoItemRequestController.add(todoItem);
   }
 }

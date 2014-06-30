@@ -11,6 +11,9 @@ class TodoItem
   //-----------------------------------
 	
 	@observable
+	int id;
+
+	@observable
 	String description;
 
 	@observable

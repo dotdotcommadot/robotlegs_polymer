@@ -6,6 +6,7 @@ import 'package:robotlegs_polymer/model/todo_list_model.dart';
 import 'package:robotlegs_polymer/view/todo_list_view.dart';
 import 'package:robotlegs_polymer/view/todo_list_mediator.dart';
 import 'package:robotlegs_polymer/controller/add_todo_item_command.dart';
+import 'package:robotlegs_polymer/controller/remove_todo_item_by_id_command.dart';
 
 class AppConfig implements IConfig
 {
@@ -28,5 +29,6 @@ class AppConfig implements IConfig
 		
 		// Map commands
 		messageCommandMap.map(ADD_TODO_ITEM).toCommand(AddTodoItemCommand);
+		messageCommandMap.map(REMOVE_TODO_ITEM_BY_ID).toCommand(RemoveTodoItemByIdCommand);
 	}
 }

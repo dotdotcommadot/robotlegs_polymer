@@ -3,12 +3,12 @@
   <template>
     <div>
     	<input id="description-input" type="text"><br>
-      <button id="add-todo-button" on-click="{{addTodo}}">Add Todo Item</button>
+      <button id="add-todo-button" on-click="{{addItem}}">Add Todo Item</button>
     </div>
     
     <ul>
       <template repeat="{{todoItem in todoItems}}">
-        <li>{{todoItem.description}}</li>
+        <li><button on-click="{{removeItem}}" todo-item-id="{{todoItem.id}}">Remove</button>  {{todoItem.description}}</li>
       </template>
     </ul>
   </template>

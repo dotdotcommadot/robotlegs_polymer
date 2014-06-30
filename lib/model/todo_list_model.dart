@@ -32,9 +32,11 @@ class TodoListModel
 		todoItems.add(item);
 	}
 
-	deleteTodoItem(TodoItem item)
+	removeTodoItemById(int id)
 	{
-		if (todoItems.contains(item))
+		TodoItem item = todoItems.where((item) => item.id == id).first;
+		
+		if (item != null)
 			todoItems.remove(item);
 	}
 }
