@@ -2,7 +2,7 @@
 <polymer-element name="todo-list-view">
   <template>
     <div>
-    	<input id="description-input" type="text"><br>
+    	<input id="description-input" type="text" on-keypress="{{descriptionInput_onKeyUp}}"><br>
       <button id="add-todo-button" on-click="{{addItem}}">Add Todo Item</button>
     </div>
     

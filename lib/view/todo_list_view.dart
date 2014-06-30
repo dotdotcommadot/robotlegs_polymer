@@ -43,6 +43,14 @@ class TodoListView extends PolymerElement
   //
   //-----------------------------------
   
+  void descriptionInput_onKeyUp(dom.KeyboardEvent event, dynamic detail, dom.Element target)
+  {
+  	switch(event.keyCode) {
+  		case 13:
+  			addItem();
+  	}
+  }
+  
   void addItem()
   {
   	dom.InputElement descriptionInput = shadowRoot.querySelector('#description-input');
